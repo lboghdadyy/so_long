@@ -2,8 +2,8 @@
 
 void    ft_check_lenght(t_point *s)
 {
-    size_t  len;
-    int     index;
+    int  len;
+    int  index;
     char    **map = s->map;
 
     index = 0;

@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 11:40:15 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/09 02:06:17 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/09 22:05:46 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ void	ft_check_map(t_point *s, char *map)
 	ft_check_uniq_exit(s);
 	ft_check_collections(s);
 	ft_check_uniq_player(s);
+	ft_player_position(s);
+	ft_check_path(s);
 }
 
 int	main(int ac, char **av)
@@ -87,8 +89,7 @@ int	main(int ac, char **av)
 		if (!s)
 			return (1);
 		ft_check_map(s, av[1]);
-		// ft_rendering_map();
-		// ft_free_tab(map_list);
+		ft_render_map(s);
 		ft_error(NULL, s);
 	}
 	return (0);

@@ -1,10 +1,10 @@
 #include "so_long.h"
 
-t_point ft_player_position(char **list)
+void ft_player_position(t_point *s)
 {
-    t_point begin;
     int     x;
     int     y;
+    char    **list = s->map;
 
     y = 0;
     while (list[y])
@@ -14,13 +14,12 @@ t_point ft_player_position(char **list)
         {
             if (list[y][x] == 'P')
             {
-                begin.x = x;
-                begin.y = y;
-                return (begin);
+                s->x = x;
+                s->y = y;
+                return ;
             }
             x++;
         }
         y++;
     }
-    return (begin);
 }

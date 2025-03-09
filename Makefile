@@ -5,7 +5,8 @@ NAME=so_long
 SRC=Mandatory/so_long.c Mandatory/includes/ft_lst_utils.c Mandatory/includes/ft_strlen.c Mandatory/includes/ft_strstr.c Mandatory/includes/get_next_line.c \
 	Mandatory/includes/get_next_line_utils.c Mandatory/includes/ft_strchr.c Mandatory/includes/ft_walls.c Mandatory/includes/ft_error.c \
 	Mandatory/includes/ft_check_lenght.c Mandatory/includes/ft_substr.c Mandatory/includes/ft_split.c \
-	Mandatory/includes/ft_check_player.c Mandatory/includes/ft_check_collections.c
+	Mandatory/includes/ft_check_player.c Mandatory/includes/ft_check_collections.c Mandatory/includes/ft_check_path.c \
+	Mandatory/includes/ft_player_positions.c
 HEADER=Mandatory/includes/so_long.h
 OBJ=$(SRC:.c=.o)
 
@@ -15,7 +16,7 @@ $(NAME) : $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $@
 
 %.o : %.c $(HEADER)
-	$(CC) $(CFLAGS) $< -c -o $@
+	@ $(CC) $(CFLAGS) $< -c -o $@
 
 clean : 
 	$(RM) $(OBJ)
