@@ -6,16 +6,17 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/25 11:37:48 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/02/28 17:05:39 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/09 02:01:23 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void    ft_error(char *s, char  **map)
+void    ft_error(char *str, t_point   *s)
 {
     if (s)
-        write(2, s, ft_strlen(s));
-    ft_free_tab(map);
-    exit(0);
+        write(2, str, ft_strlen(str));
+    ft_free_tab(s->map);
+    free(s);
+    exit(1);
 }

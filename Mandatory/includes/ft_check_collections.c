@@ -6,16 +6,17 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 11:37:00 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/03 15:16:03 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/09 02:04:20 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void    ft_check_collections(char **list)
+void    ft_check_collections(t_point    *s)
 {
     int index;
     int index2;
+    char    **list = s->map;
     
     index = 0;
     index2 = 0;
@@ -30,5 +31,6 @@ void    ft_check_collections(char **list)
         }
         index++;
     }
-    return (ft_error("Error : there is no collections\n", list));
+    write(1, "here\n", 5);
+    ft_error("Error : there is no collections\n", s);
 }

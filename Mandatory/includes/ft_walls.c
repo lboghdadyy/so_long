@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 15:13:39 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/03 15:18:47 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/09 01:54:12 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,13 @@ int	ft_check_mid(char *line)
 	return (0);
 }
 
-int	ft_check_walls(char **list)
+void	ft_check_walls(t_point	*s)
 {
-	int index;
-	int	size;
+	int		index;
+	int		size;
+	char	**list;
 	
+	list = s->map;
 	index = 0;
 	size = ft_size_array(list);
 	while (list[index])
@@ -81,14 +83,13 @@ int	ft_check_walls(char **list)
 		if (index == 0 || index == size - 1)
 		{
 			if (ft_check_top_bot(list[index]))
-				return (ft_error("there was a probleme in walls", list), 1);
+				ft_error("there was a probleme in walls", s);
 		}
 		else
 		{
 			if (ft_check_mid(list[index]))
-				return (ft_error("there was a probleme in mid map", list), 1);
+				ft_error("there was a probleme in mid map", s);
 		}
 		index++;
 	}
-	return (0);
 }
