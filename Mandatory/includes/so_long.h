@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 11:32:48 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/09 23:17:04 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/10 03:08:54 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,24 @@
 
 typedef struct s_point {
 	char	**map;
-	int		x;
-	int		y;
-	int		y_e;
-	int		x_e;
+	void	*mlx;
+	void	*win;
 	int		width;
 	int		height;
 	void	*wall;
 	void	*space;
-	void	*down;
+	void	*player_img;
 	void	*coin;
 	void	*exit_o;
 	void	*exit_c;
-	void	*mlx;
-	void	*win;
-	
+	int		x;
+	int		y;
+	int		e_x;
+	int		e_y;
+	int		moves;
+	int		player;
+	int		coins;
+	int		exit;
 } t_point;
 
 
@@ -65,5 +68,7 @@ void  	flood_fill(char **tab, t_point size, t_point begin);
 t_point ft_size_cord(char **list);
 void ft_player_position(t_point *s);
 void    ft_check_path(t_point *s);
+void    ft_render_map(t_point *s);
+void	ft_load_img(t_point *s);
 
 #endif

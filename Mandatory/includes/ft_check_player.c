@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 10:53:59 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/09 02:01:32 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/10 03:06:26 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ void    ft_check_uniq_exit(t_point *s)
             {
                 if (count == 0)
                 {
-                    s->x_e = index2;
-                    s->y_e = index;
+                    s->e_x = index2;
+                    s->e_y = index;
                     count = 1;
                 }
                 else
