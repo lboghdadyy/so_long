@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 11:32:48 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/10 03:08:54 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/11 01:00:38 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,12 @@
 #include <stdio.h>
 #include "../../../minilibx-linux/mlx.h"
 
-#define BUFFER_SIZE 1024
+#define BUFFER_SIZE 10
+#define ESC 65307  
+#define ARROW_UP 65362
+#define ARROW_LEFT 65361
+#define ARROW_RIGHT 65363
+#define ARROW_DOWN	65364
 
 typedef struct s_point {
 	char	**map;
@@ -66,9 +71,20 @@ void    ft_check_uniq_exit(t_point *s);
 void    ft_check_collections(t_point    *s);
 void  	flood_fill(char **tab, t_point size, t_point begin);
 t_point ft_size_cord(char **list);
-void ft_player_position(t_point *s);
+void 	ft_player_position(t_point *s);
 void    ft_check_path(t_point *s);
 void    ft_render_map(t_point *s);
 void	ft_load_img(t_point *s);
+int		key_hook(int key_code, t_point *s);
+void    ft_up(t_point   *s);
+void    ft_left(t_point   *s);
+void    ft_down(t_point   *s);
+void    ft_right(t_point   *s);
+void	ft_put_image(t_point *s);
+int 	ft_how_many(char **list, char c);
+void    ft_exit_game(t_point *s);
+void    ft_won(t_point *s);
+void    ft_print_moves(int  moves);
+void    ft_destroy_imges(t_point    *s);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 11:40:15 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/09 22:05:46 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/11 00:38:47 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,14 @@ void	ft_check_map(t_point *s, char *map)
 
 	index = 0;
 	if (ft_strlen(map) <= 4)
-		ft_error("there was a probleme in the file path\n", NULL);
+		ft_error("there was a probleme in the file path\n", s);
 	extention = ft_strstr(map, ".ber");
 	if(!extention || ft_strlen(extention) != 4)
-		ft_error("there was a probleme in the file path\n", NULL);
+	{
+		free(s);
+		write(2, "there was a probleme in the file path\n", 38);
+		exit(1);
+	}
 	ft_check_content_map(s, map);
 	ft_check_walls(s);
 	ft_check_lenght(s);
