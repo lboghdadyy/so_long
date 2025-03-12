@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 char	**ft_dup_map(char **map)
 {
@@ -33,12 +33,10 @@ char	**ft_dup_map(char **map)
 
 void	ft_flood_fill(char **map, int x, int y)
 {
-	printf("--> %d\n--->%d\n",y, x);
 	if (y < 0 || x >= ft_strlen(map[0]) || x < 0 || \
 			y >= ft_size_array(map) || map[y][x] == '1' || \
 			map[y][x] == 'F' || map[y][x] == 'E')
 	{
-		// printf("--> %c\n",map[y][x]);
 		return ;
 	}
 	map[y][x] = 'F';
@@ -78,9 +76,6 @@ void    ft_check_path(t_point *s)
     if (!dup_map)
         ft_error(NULL, s);
     ft_flood_fill(dup_map, s->x, s->y);
-	// printf("%c\n", dup_map[s->y][s->x]);
-	for (int i = 0; dup_map[i]; i++)
-		printf("%s\n", dup_map[i]);
 	ft_check_flood_fill(s, dup_map);
 	ft_free_tab(dup_map);
 }

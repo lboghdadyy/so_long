@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 11:32:48 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/11 21:25:22 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/12 00:47:07 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@
 #define ARROW_RIGHT 65363
 #define ARROW_DOWN	65364
 
+typedef struct e_p {
+	struct e_p *next;
+	int	x;
+	int	y;
+} enemy;
+
 typedef struct s_point {
 	char	**map;
 	void	*mlx;
@@ -34,6 +40,7 @@ typedef struct s_point {
 	int		height;
 	void	*wall;
 	void	*space;
+	void	*enemy;
 	void	*player_img;
 	void	*coin;
 	void	*exit_o;
@@ -52,10 +59,10 @@ typedef struct s_point {
 char	*ft_strstr(char *haystack, char *needle);
 char	*get_next_line(int fd);
 int 	ft_strlen(char *string);
-// t_list	*ft_lstnew(char *line);
-// void	ft_lstadd_back(t_list **lst, t_list *new);
-// void	ft_lstclear(t_list **lst);
-// t_list	*ft_lstlast(t_list *lst);
+enemy 	*ft_lstnew(int x, int y)
+void	ft_lstadd_back(enemy **lst, enemy *new)
+void	ft_lstclear(enemy **lst)
+enemy 	*ft_lstlast(enemy *lst)
 char	*ft_strjoin_gnl(char *s1, char *s2);
 char    *ft_strchr(char *line, char c);
 char    *ft_strdup(char *s1);
@@ -87,5 +94,7 @@ void    ft_won(t_point *s);
 void    ft_print_moves(int  moves);
 void    ft_destroy_imges(t_point    *s);
 char    *ft_strrstr(char *s1, char *s2);
+void    ft_move_enemy(t_point *s, char c);
+enemy 	*ft_enemy_position(t_point *s);
 
 #endif

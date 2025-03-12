@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   so_long_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 11:40:15 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/11 22:52:52 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/12 00:12:51 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/so_long.h"
+#include "includes/so_long_bonus.h"
 
 size_t	lenght_of_line(char *line)
 {

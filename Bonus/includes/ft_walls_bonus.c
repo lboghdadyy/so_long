@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_walls.c                                         :+:      :+:    :+:   */
+/*   ft_walls_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 15:13:39 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/11 22:51:51 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/12 00:21:03 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 // int ft_strcmp(char *s1, char *s2)
 // {
@@ -62,7 +62,7 @@ int	ft_check_mid(char *line)
 		return (1);
 	while (line[index])
 	{
-		if (!ft_strchr("01CPE", line[index]))
+		if (!ft_strchr("01CPEN", line[index]))
 			return (1);
 		index++;
 	}
