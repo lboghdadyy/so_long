@@ -32,7 +32,7 @@ enemy *ft_enemy_position(t_point *s)
     enemy   *tmp = NULL;
     char    **list;
 
-    **list = s->map;
+    list = s->map;
     y = 0;
     while (list[y])
     {
@@ -42,13 +42,13 @@ enemy *ft_enemy_position(t_point *s)
             if (list[y][x] == 'N')
             {
                 tmp = ft_lstnew(x, y);
-                if (tmp)
-                    return (ft_lstclear(lst));
+                if (!tmp)
+                    return (ft_lstclear(&lst), NULL);
                 ft_lstadd_back(&lst, tmp);
-                return ;
             }
             x++;
         }
         y++;
     }
+    return (lst);
 }

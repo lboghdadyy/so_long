@@ -72,12 +72,6 @@ void    ft_render_map(t_point *s)
     ft_put_image(s);
     mlx_key_hook(s->win, key_hook, s);
 	mlx_hook(s->win, 17, 0, ft_close, s);
-	while (1)
-	{
-		ft_move_enemy(s, 'U');
-		ft_move_enemy(s, 'D');
-		ft_move_enemy(s, 'R');
-		ft_move_enemy(s, 'L');
-	}
+	mlx_loop_hook(s->mlx, ft_move_enemy, s);
 	mlx_loop(s->mlx);
 }

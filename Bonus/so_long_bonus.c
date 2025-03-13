@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 11:40:15 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/12 00:12:51 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/13 01:13:20 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void	ft_check_map(t_point *s, char *map)
 int	main(int ac, char **av)
 {
 	t_point *s;
-
+	
 	if (ac == 2)
 	{
 		s = malloc(sizeof(t_point));

@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 19:23:23 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/12 00:42:35 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/13 01:23:33 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ enemy *ft_lstnew(int x, int y)
 		return (NULL);
 	elt->x = x;
 	elt->y = y;
+	elt->direction = 1;
 	elt->next = NULL;
 	return (elt);
 }
@@ -49,7 +50,6 @@ void	ft_lstclear(enemy **lst)
 	while (*lst)
 	{
 		aux = (*lst)->next;
-		free((*lst)->line);
 		free(lst);
 		*lst = aux;
 	}
