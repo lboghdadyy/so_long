@@ -6,75 +6,73 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 10:53:59 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/10 03:06:26 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/14 11:05:33 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void    ft_check_uniq_player(t_point *s)
+void	ft_check_uniq_player(t_point *s)
 {
-    int index;
-    int index2;
-    int count;
-    char    **list = s-> map;
+	int		index;
+	int		index2;
+	int		count;
+	char	**list;
 
-    (1) && (index = 0, count = 0);
-    while (list[index])
-    {
-        index2 = 0;
-        while (list[index][index2])
-        {
-            if (list[index][index2] == 'P')
-            {
-                if (count == 0)
-                {
-                    s->x = index2;
-                    s->y = index;
-                    count = 1;
-                }
-                else
-                    return (ft_error("Error : Invalid map check repeted\n", s));
-            }
-            index2++;
-        }
-        index++;
-    }
-    if (count == 0)
-        ft_error("Error : check either Exit or Player\n", s);
+	(1) && (index = 0, count = 0, list = s->map);
+	while (list[index])
+	{
+		index2 = 0;
+		while (list[index][index2])
+		{
+			if (list[index][index2] == 'P')
+			{
+				if (count == 0)
+				{
+					s->x = index2;
+					s->y = index;
+					count = 1;
+				}
+				else
+					return (ft_error("Error : Invalid map check repeted\n", s));
+			}
+			index2++;
+		}
+		index++;
+	}
+	if (count == 0)
+		ft_error("Error : check either Exit or Player\n", s);
 }
 
-void    ft_check_uniq_exit(t_point *s)
+void	ft_check_uniq_exit(t_point *s)
 {
-    int index;
-    int index2;
-    int count;
+	int	index;
+	int	index2;
+	int	count;
 
-    char    **list = s-> map;
-    (1) && (index = 0, count = 0);
-    while (list[index])
-    {
-        index2 = 0;
-        while (list[index][index2])
-        {
-            if (list[index][index2] == 'E')
-            {
-                if (count == 0)
-                {
-                    s->e_x = index2;
-                    s->e_y = index;
-                    count = 1;
-                }
-                else
-                    return (ft_error("Error : Invalid map check repeted\n", s));
-            }
-            index2++;
-        }
-        index++;
-    }
-    if (count == 0)
-    {
-        ft_error("Error : check either Exit or Player\n", s);
-    }
+	char    **list = s-> map;
+	(1) && (index = 0, count = 0);
+	while (list[index])
+	{
+		index2 = 0;
+		while (list[index][index2])
+		{
+			if (list[index][index2] == 'E')
+			{
+				if (count == 0)
+				{
+					s->e_x = index2;
+					s->e_y = index;
+					count = 1;
+				}
+				else
+					return (ft_error("Error : Invalid map check repeted\n", s));
+			}
+			index2++;
+		}
+		index++;
+	}
+	if (count == 0)
+		ft_error("Error : check either Exit or Player\n", s);
 }
 

@@ -19,8 +19,7 @@ void    ft_initialisation(t_point *s)
 	s->wall = NULL;
 	s->player_img = NULL;
 	s->coin = NULL;
-	s->exit_c = NULL;
-	s->exit_o = NULL;
+	s->exit= NULL;
     ft_load_img(s);
 }
 
@@ -34,10 +33,8 @@ void	draw_img(t_point *s, int x, int y)
 		mlx_put_image_to_window(s->mlx, s->win, s->player_img, x * 100, y * 100);
 	else if (s->map[y][x] == 'C')
 		mlx_put_image_to_window(s->mlx, s->win, s->coin, x * 100, y * 100);
-	else if (s->map[y][x] == 'E' && s->coins == 0)
-		mlx_put_image_to_window(s->mlx, s->win, s->exit_o, x * 100, y * 100);
-	else if (s->map[y][x] == 'E' && s->coins != 0)
-		mlx_put_image_to_window(s->mlx, s->win, s->exit_c, x * 100, y * 100);
+	else if (s->map[y][x] == 'E')
+		mlx_put_image_to_window(s->mlx, s->win, s->exit, x * 100, y * 100);
 }
 
 void	ft_put_image(t_point *s)

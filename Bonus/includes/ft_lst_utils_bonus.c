@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 19:23:23 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/13 01:23:33 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/14 13:15:28 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_lstclear(enemy **lst)
 {
 	enemy *aux;
 
-	if (!*lst)
+	if (!*lst || !lst)
 		return ;
 	while (*lst)
 	{

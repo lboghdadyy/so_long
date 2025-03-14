@@ -2,25 +2,22 @@
 
 void    ft_exit_game(t_point *s)
 {
-    mlx_destroy_image(s->mlx, s->wall);
-    mlx_destroy_image(s->mlx, s->space);
-    mlx_destroy_image(s->mlx, s->exit_o);
-    mlx_destroy_image(s->mlx, s->coin);
-    mlx_destroy_image(s->mlx, s->player_img);
-    mlx_destroy_image(s->mlx, s->exit_c);
-    // if (s->wall)
-    //     free(s->wall);
-    // if (s->space)
-    //     free(s->space);
-    // if (s->exit_o)
-    //     free(s->exit_o);
-    // if (s->coin)
-    //     free(s->coin);
-    // if (s->player_img)
-    //     free(s->player_img);
-    // if (s->exit_c)
-    //     free(s->exit_c);
-    mlx_destroy_window(s->mlx, s->win);
+    if (!s || !s->mlx)
+        return;
+    if (s->wall)
+        mlx_destroy_image(s->mlx, s->wall);
+    if (s->space)
+        mlx_destroy_image(s->mlx, s->space);
+    if (s->coin)
+        mlx_destroy_image(s->mlx, s->coin);
+    if (s->player_img)
+        mlx_destroy_image(s->mlx, s->player_img);
+    if (s->exit)
+        mlx_destroy_image(s->mlx, s->exit);
+    if (s->win)
+        mlx_destroy_window(s->mlx, s->win);
+    mlx_destroy_display(s->mlx);
+    free(s->mlx);
     ft_error(NULL, s);
 }
 

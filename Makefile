@@ -1,8 +1,8 @@
 CC=cc
-CFLAGS=-Wall -Wextra -Werror #`-fsanitize=address -g3
+CFLAGS=-Wall -Wextra -Werror -fsanitize=address -g3
 RM=rm -rf
 NAME=so_long
-SRC=Mandatory/so_long.c Mandatory/includes/ft_lst_utils.c Mandatory/includes/ft_strlen.c Mandatory/includes/ft_strstr.c Mandatory/includes/get_next_line.c \
+SRC=Mandatory/so_long.c Mandatory/includes/ft_strlen.c Mandatory/includes/ft_strstr.c Mandatory/includes/get_next_line.c \
 	Mandatory/includes/get_next_line_utils.c Mandatory/includes/ft_strchr.c Mandatory/includes/ft_walls.c Mandatory/includes/ft_error.c \
 	Mandatory/includes/ft_check_lenght.c Mandatory/includes/ft_substr.c Mandatory/includes/ft_split.c \
 	Mandatory/includes/ft_check_player.c Mandatory/includes/ft_check_collections.c Mandatory/includes/ft_check_path.c \
@@ -10,7 +10,8 @@ SRC=Mandatory/so_long.c Mandatory/includes/ft_lst_utils.c Mandatory/includes/ft_
 	Mandatory/game/ft_moves.c Mandatory/game/ft_player_moves.c Mandatory/game/ft_how_many.c Mandatory/game/ft_won.c \
 	Mandatory/game/ft_print_moves.c Mandatory/game/ft_destroy_imgs.c Mandatory/includes/ft_strrstr.c
 HEADER=Mandatory/includes/so_long.h
-B_SRC=$(patsubst Mandatory/%.c, Bonus/%_bonus.c, $(SRC)) Bonus/game/ft_move_enemy.c
+B_SRC=$(patsubst Mandatory/%.c, Bonus/%_bonus.c, $(SRC)) Bonus/game/ft_move_enemy.c Bonus/game/ft_you_lose.c Bonus/includes/ft_itoa.c \
+	Bonus/includes/ft_strjoin.c Bonus/game/ft_draw_player.c Bonus/includes/ft_lst_utils_bonus.c
 B_OBJ=$(B_SRC:.c=.o)
 OBJ=$(SRC:.c=.o)
 MLX_DIR = ../minilibx-linux

@@ -1,24 +1,19 @@
 #include "../includes/so_long_bonus.h"
 
-void	ft_putchar(char c) {
-	write(1, &c, 1);
-}
-
-void	ft_putnbr(int nb) {
-	if (nb < 0) {
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10) {
-		ft_putnbr(nb / 10);
-		nb = nb % 10;
-	}
-	if (nb < 10) ft_putchar(nb + 48);
-}
-
-void    ft_print_moves(int  moves)
+void    ft_print_moves(t_point *s, int moves)
 {
-    write(1, "move --> ", 9);
-    ft_putnbr(moves);
-    write(1, "\n", 1);
+    char *tmp;
+    char *moves_str;
+
+    moves_str = ft_itoa(moves);
+    if (!moves_str)
+        return;
+    
+    tmp = ft_strjoin("moves : ", moves_str);
+    free(moves_str);
+    if (!tmp)
+		return ;
+	mlx_put_image_to_window(s->mlx, s->win, s->wall, 100, 0);
+    mlx_string_put(s->mlx, s->win, 100, 100, 0x00FF0000, tmp);
+    free(tmp);
 }

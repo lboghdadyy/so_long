@@ -4,7 +4,7 @@ void	ft_load_img(t_point *s)
 {
 	int	x;
 
-	x = 50;
+	x = 100;
 	s->wall = mlx_xpm_file_to_image(s->mlx, "./Mandatory/img/wall_1_100x100.xpm",
 			&x, &x);
 	s->space = mlx_xpm_file_to_image(s->mlx, "./Mandatory/img/space_1_100x100.xpm",
@@ -13,11 +13,9 @@ void	ft_load_img(t_point *s)
 			&x, &x);
 	s->coin = mlx_xpm_file_to_image(s->mlx, "./Mandatory/img/collection_100x100.xpm",
 			&x, &x);
-	s->exit_o = mlx_xpm_file_to_image(s->mlx, "./Mandatory/img/Exit_1_100x100.xpm",
-			&x, &x);
-	s->exit_c = mlx_xpm_file_to_image(s->mlx, "./Mandatory/img/closed_exit_finished_100x100.xpm",
+	s->exit = mlx_xpm_file_to_image(s->mlx, "./Mandatory/img/closed_exit_finished_100x100.xpm",
 			&x, &x);
 	if (!s->wall || !s->space || !s->player_img
-		|| !s->coin || !s->exit_o || !s->exit_c)
+		|| !s->coin || !s->exit)
         ft_exit_game(s);
 }

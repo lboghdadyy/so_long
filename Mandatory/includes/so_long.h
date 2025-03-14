@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 11:32:48 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/11 21:25:22 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/14 01:34:23 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ typedef struct s_point {
 	void	*space;
 	void	*player_img;
 	void	*coin;
-	void	*exit_o;
-	void	*exit_c;
+	void	*exit;
 	int		x;
 	int		y;
 	int		e_x;
@@ -45,7 +44,6 @@ typedef struct s_point {
 	int		moves;
 	int		player;
 	int		coins;
-	int		exit;
 } t_point;
 
 
@@ -87,5 +85,6 @@ void    ft_won(t_point *s);
 void    ft_print_moves(int  moves);
 void    ft_destroy_imges(t_point    *s);
 char    *ft_strrstr(char *s1, char *s2);
+void	draw_img(t_point *s, int x, int y);
 
 #endif

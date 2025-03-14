@@ -21,8 +21,8 @@ void    ft_up(t_point   *s)
         s->map[y][x] = '0';
         s->x = x;
         s->y = y - 1;
-        mlx_clear_window(s->mlx, s->win);
-        ft_put_image(s);
+        draw_img(s, x, y);
+        draw_img(s, x, y - 1);
     }
 }
 
@@ -47,8 +47,8 @@ void    ft_right(t_point   *s)
         s->map[y][x] = '0';
         s->x = x + 1;
         s->y = y;
-        mlx_clear_window(s->mlx, s->win);
-        ft_put_image(s);
+        draw_img(s, x, y);
+        draw_img(s, x + 1, y);
     }
 }
 
@@ -73,8 +73,8 @@ void    ft_down(t_point   *s)
         s->map[y][x] = '0';
         s->x = x;
         s->y = y + 1;
-        mlx_clear_window(s->mlx, s->win);
-        ft_put_image(s);
+        draw_img(s, x, y);
+        draw_img(s, x, y + 1);
     }
 }
 
@@ -99,7 +99,7 @@ void    ft_left(t_point   *s)
         s->map[y][x] = '0';
         s->x = x  - 1;
         s->y = y;
-        mlx_clear_window(s->mlx, s->win);
-        ft_put_image(s);
+        draw_img(s, x, y);
+        draw_img(s, x - 1, y);
     }
 }
