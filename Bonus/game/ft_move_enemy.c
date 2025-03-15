@@ -14,13 +14,13 @@ int ft_move_enemy(t_point *s)
     static int frame_counter;
     int x, y;
     enemy *lst;
-    enemy *tmp;
 
     if (++frame_counter < 35000)
         return (1);
     frame_counter = 0;
-    tmp = ft_enemy_position(s);
-    lst = tmp;
+    lst = ft_enemy_position(s);
+    if (!lst)
+        return (0);
     while (lst)
     {
         (1) && (x = lst->x, y = lst->y);
@@ -50,7 +50,6 @@ int ft_move_enemy(t_point *s)
         }
         lst = lst->next;
     }
-    printf("%d\n%d\n", tmp->x, tmp->y);
-    ft_lstclear(&tmp);
+    ft_lstclear(&lst);
     return (0);
 }

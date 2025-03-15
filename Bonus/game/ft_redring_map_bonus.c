@@ -64,7 +64,7 @@ void	ft_put_image(t_point *s)
 
 int    ft_close(t_point *s)
 {
-    ft_error(NULL, s);
+	ft_exit_game(s);
     return (1);
 }
 

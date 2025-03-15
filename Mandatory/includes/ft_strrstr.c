@@ -2,16 +2,18 @@
 
 char *ft_strcmp(char *s1, char *s2)
 {
-	int	i;
+    int i = 0;
 
-	i = 0;
-	while((s1[i] == s2[i]) && s1[i] && s2[i])
-		i++;
-	if (s1[i] == s2[i])
-		return (s1);
-	else
-		return (NULL);
+    while (s1[i] || s2[i]) 
+	{
+        if (s1[i] == s2[i]) 
+            i++;
+		else
+			return (NULL);
+    }
+    return (s1);
 }
+
 
 char	*ft_strrchr(char *s, int c)
 {
@@ -32,6 +34,8 @@ char	*ft_strrstr(char *s1, char *s2)
 	char	*resault;
 
 	resault = ft_strrchr(s1, '.');
+	if (!resault)
+		return (NULL);
 	if (!ft_strcmp(s2, resault))
 		return (NULL);
 	return (s1);

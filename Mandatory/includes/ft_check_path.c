@@ -39,7 +39,8 @@ void	ft_flood_fill(char **map, int x, int y)
 	{
 		return ;
 	}
-	map[y][x] = 'F';
+	if (map[y][x] != 'C')
+		map[y][x] = 'F';
 	ft_flood_fill(map, x - 1, y);
 	ft_flood_fill(map, x + 1, y);
 	ft_flood_fill(map, x, y - 1);
@@ -58,9 +59,9 @@ void	ft_check_flood_fill(t_point *s, char **map)
 		j = 0;
 		while (map[i][j])
 		{
-			if (((map[i][j] == 'C') || (map[i][j] == 'E' \
-				&& map[i - 1][j] == '1' && map[i + 1][j] == '1' && \
-				map[i][j - 1] == '1' && map[i][j + 1] == '1')))
+			if (((map[i][j] == 'C') || (map[i][j] == 'E')) \
+				&& (map[i - 1][j] != 'F' && map[i + 1][j] != 'F' && \
+				map[i][j - 1] != 'F' && map[i][j + 1] != 'F'))
 				ft_error("Error : Invalid path\n", s);
 			j++;
 		}

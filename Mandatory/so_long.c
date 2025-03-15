@@ -26,13 +26,14 @@ size_t	lenght_of_line(char *line)
 
 void	ft_check_content_map(t_point	*s, char *map)
 {
-	char	*line = NULL;
+	char	*line;
 	char	*tmp;
 	char	*tmp_join;
 	int		fd;
 	char	**list;
 
 	fd = open(map, O_RDONLY, 0644);
+	(1) && (line = NULL, s->map = NULL);
 	if (fd == -1)
 		ft_error("Error : there is no map with that path\n", s);
 	while (1)
@@ -40,6 +41,12 @@ void	ft_check_content_map(t_point	*s, char *map)
 		tmp = get_next_line(fd);
 		if (!tmp)
 			break;
+		if (ft_strlen(tmp) == 1)
+		{
+			free(line);
+			free(tmp);
+			ft_error("Error : in the map lines\n", NULL);
+		}
 		tmp_join = ft_strjoin_gnl(line, tmp);
 		if (!tmp_join)
 		{
@@ -60,10 +67,8 @@ void	ft_check_content_map(t_point	*s, char *map)
 
 void	ft_check_map(t_point *s, char *map)
 {
-	int		index;
 	char	*extention;
 
-	index = 0;
 	extention = ft_strrstr(map, ".ber");
 	if(!extention)
 	{

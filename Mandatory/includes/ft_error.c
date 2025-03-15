@@ -16,7 +16,10 @@ void	ft_error(char *str, t_point   *s)
 {
 	if (str)
 		write(2, str, ft_strlen(str));
-	ft_free_tab(s->map);
-	free(s);
+	if (s)
+	{
+		ft_free_tab(s->map);
+		free(s);
+	}
 	exit(1);
 }
