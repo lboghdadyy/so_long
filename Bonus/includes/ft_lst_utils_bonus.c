@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 19:23:23 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/14 13:15:28 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/16 02:44:55 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,18 @@ void	ft_lstadd_back(enemy **lst, enemy *new)
 	tmp->next = new;
 }
 
-void	ft_lstclear(enemy **lst)
+void ft_lstclear(enemy **lst)
 {
-	enemy *aux;
+    enemy *temp;
 
-	if (!*lst || !lst)
-		return ;
-	while (*lst)
-	{
-		aux = (*lst)->next;
-		free(lst);
-		*lst = aux;
-	}
-	*lst = 0;
+    while (*lst)
+    {
+        temp = *lst;
+        *lst = (*lst)->next;
+        free(temp);
+    }
 }
+
 
 enemy *ft_lstlast(enemy *lst)
 {

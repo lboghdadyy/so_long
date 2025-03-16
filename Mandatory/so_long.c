@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 11:40:15 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/11 22:52:52 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/16 02:22:39 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	ft_check_content_map(t_point	*s, char *map)
 		{
 			free(line);
 			free(tmp);
-			ft_error("Error : in the map lines\n", NULL);
+			ft_error("Error : in the map lines\n", s);
 		}
 		tmp_join = ft_strjoin_gnl(line, tmp);
 		if (!tmp_join)

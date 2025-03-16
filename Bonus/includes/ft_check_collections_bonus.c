@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/01 11:37:00 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/12 00:14:01 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/16 02:28:26 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ void    ft_check_collections(t_point    *s)
         }
         index++;
     }
-    write(1, "here\n", 5);
     ft_error("Error : there is no collections\n", s);
 }
