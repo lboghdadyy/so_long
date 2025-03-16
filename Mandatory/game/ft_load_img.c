@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 11:27:36 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/16 12:40:38 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/16 19:34:07 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_load_img(t_point *s)
 			&x, &x);
 	s->p_img = mlx_xpm_file_to_image(s->mlx, "./Mandatory/img/player.xpm",
 			&x, &x);
-	s->coin = mlx_xpm_file_to_image(s->mlx, "./Mandatory/img/t_collection.xpm",
+	s->coin = mlx_xpm_file_to_image(s->mlx, "./Mandatory/img/collection.xpm",
 			&x, &x);
 	s->exit = mlx_xpm_file_to_image(s->mlx, "./Mandatory/img/closed_exit.xpm",
 			&x, &x);

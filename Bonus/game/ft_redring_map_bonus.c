@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 06:24:27 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/16 13:25:52 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/16 19:43:06 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_initialisation(t_point *s)
 		ft_error("Error : something is wrong with MLX!\n", s);
 	s->win = mlx_new_window(s->mlx, s->width, s->height, "Sooooooo_long");
 	if (!s->win)
-		ft_error("Error : something is wrong with MLX window!\n", s);
+		ft_exit_game(s);
 	s->coins = ft_how_many(s->map, 'C');
 	s->moves = 0;
 	(1) && (s->wall = NULL, s->plr_r = NULL, s->plr_l = NULL, s->plr_d = NULL);

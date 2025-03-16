@@ -1,5 +1,5 @@
 CC=cc
-CFLAGS=-Wall -Wextra -Werror #-fsanitize=address -g3
+CFLAGS=-Wall -Wextra -Werror
 RM=rm -rf
 NAME=so_long
 SRC=Mandatory/so_long.c Mandatory/includes/ft_strlen.c Mandatory/includes/ft_strstr.c Mandatory/includes/get_next_line.c \
@@ -21,6 +21,7 @@ INCLUDES = -I$(MLX_DIR)
 LIBS = -L$(MLX_DIR) -lmlx -lX11 -lXext -lm
 BONUS_NAME=so_long_bonus
 BONUS_HEADER=Bonus/includes/so_long_bonus.h
+
 all : $(NAME)
 
 $(NAME): $(OBJ)
@@ -30,7 +31,7 @@ $(NAME): $(OBJ)
 	@ $(CC) $(CFLAGS) $< -c -o $@
 
 Bonus/%.o: Bonus/%.c $(BONUS_HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@ $(CC) $(CFLAGS) -c $< -o $@
 
 bonus : $(BONUS_NAME)
 

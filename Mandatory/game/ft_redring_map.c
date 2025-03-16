@@ -6,11 +6,12 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 11:19:56 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/16 11:22:03 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/16 19:43:39 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+#include <stdio.h>
 
 void	ft_initialisation(t_point *s)
 {
@@ -21,7 +22,7 @@ void	ft_initialisation(t_point *s)
 		ft_error("Error : something is wrong with MLX!\n", s);
 	s->win = mlx_new_window(s->mlx, s->width, s->height, "Sooooooo_long");
 	if (!s->win)
-		ft_error("Error : something is wrong with MLX!\n", s);
+		ft_exit_game(s);
 	s->coins = ft_how_many(s->map, 'C');
 	s->moves = 0;
 	s->wall = NULL;
