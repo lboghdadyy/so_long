@@ -6,12 +6,11 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 11:19:56 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/16 19:43:39 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/16 21:02:29 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-#include <stdio.h>
 
 void	ft_initialisation(t_point *s)
 {
