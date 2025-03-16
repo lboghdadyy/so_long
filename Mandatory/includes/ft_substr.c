@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 10:38:04 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/02/26 10:38:16 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/16 11:05:18 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strsub(char *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	substr = (char*)malloc(sizeof(char) * (len + 1));
+	substr = malloc(sizeof(char) * (len + 1));
 	if (!s || !substr)
 		return (NULL);
 	while (i < len && s[start])

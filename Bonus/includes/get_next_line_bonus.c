@@ -6,7 +6,7 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 19:37:47 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/12 00:15:01 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/16 11:55:29 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ char	*get_next_line(int fd)
 	char		*tmp;
 
 	if (fd > 1024 || fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE > 2147483647)
-		return (NULL);
+		return (free(readed), readed = NULL);
 	readed = get_it(fd, readed);
 	if (!readed)
 	{

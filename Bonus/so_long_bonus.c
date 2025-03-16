@@ -6,13 +6,23 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 11:40:15 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/13 01:13:20 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/16 13:34:35 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/so_long_bonus.h"
 
-void	ft_check_content_map(t_point	*s, char *map)
+int	ft_open_map(t_point *s, char *map)
+{
+	int	fd;
+
+	fd = open(map, O_RDONLY, 0644);
+	if (fd == -1)
+		ft_error("Error : there is no map with that path\n", s);
+	return (fd);
+}
+
+void	ft_check_content_map(t_point *s, char *map)
 {
 	char	*line;
 	char	*tmp;
@@ -20,37 +30,25 @@ void	ft_check_content_map(t_point	*s, char *map)
 	int		fd;
 	char	**list;
 
-	fd = open(map, O_RDONLY, 0644);
-	(1) && (line = NULL, s->map = NULL);
-	if (fd == -1)
-		ft_error("Error : there is no map with that path\n", s);
+	(1) && (line = NULL, s->map = NULL, fd = ft_open_map(s, map));
 	while (1)
 	{
 		tmp = get_next_line(fd);
 		if (!tmp)
-			break;
+			break ;
 		if (ft_strlen(tmp) == 1)
-		{
-			free(line);
-			free(tmp);
-			ft_error("Error : in the map lines\n", NULL);
-		}
+			(free(tmp), close(fd), free(line), ft_error("\
+			Error : in the map lines\n", s));
 		tmp_join = ft_strjoin_gnl(line, tmp);
 		if (!tmp_join)
-		{
-			free(line);
-			ft_error(NULL, s);
-		}
-		free(line);
-		free(tmp);
+			(close(fd), free(line), free(tmp), ft_error(NULL, s));
+		(free(line), free(tmp));
 		line = tmp_join;
 	}
-	list = ft_split(line, '\n');
+	(1) && (list = ft_split(line, '\n'), s->map = list);
+	(free(line), close(fd));
 	if (!list)
-		ft_error(NULL, s);
-	close(fd);
-	free(line);
-	s->map = list;
+		ft_error("Error : empty map !\n", s);
 }
 
 void	ft_check_map(t_point *s, char *map)
@@ -58,7 +56,7 @@ void	ft_check_map(t_point *s, char *map)
 	char	*extention;
 
 	extention = ft_strrstr(map, ".ber");
-	if(!extention)
+	if (!extention)
 	{
 		free(s);
 		write(2, "there was a probleme in the file path\n", 38);
@@ -76,7 +74,7 @@ void	ft_check_map(t_point *s, char *map)
 
 int	main(int ac, char **av)
 {
-	t_point *s;
+	t_point	*s;
 
 	if (ac == 2)
 	{

@@ -6,31 +6,16 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 15:13:39 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/11 22:51:51 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/16 11:04:30 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-// int ft_strcmp(char *s1, char *s2)
-// {
-// 	int i = 0;
-	
-// 	if (!s1 || !s2)
-// 		return (1);
-// 	while(s1[i] || s2[i])
-// 	{
-// 		if (s1[i] != s2[i])
-// 			return (1);
-// 		i++;
-// 	}
-// 	return (0);
-// }
-
 int	ft_check_top_bot(char *line)
 {
-	int ind;
-	
+	int	ind;
+
 	ind = 0;
 	while (line[ind])
 	{
@@ -43,7 +28,7 @@ int	ft_check_top_bot(char *line)
 
 int	ft_size_array(char **list)
 {
-	int count;
+	int	count;
 
 	if (!list || !*list)
 		return (0);
@@ -55,7 +40,7 @@ int	ft_size_array(char **list)
 
 int	ft_check_mid(char *line)
 {
-	int index;
+	int	index;
 
 	index = 0;
 	if (line[0] != '1' || line[ft_strlen(line) - 1] != '1')
@@ -74,7 +59,7 @@ void	ft_check_walls(t_point	*s)
 	int		index;
 	int		size;
 	char	**list;
-	
+
 	list = s->map;
 	index = 0;
 	size = ft_size_array(list);

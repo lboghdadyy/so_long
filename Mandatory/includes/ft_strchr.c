@@ -6,13 +6,13 @@
 /*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 20:23:53 by sbaghdad          #+#    #+#             */
-/*   Updated: 2025/03/14 11:02:47 by sbaghdad         ###   ########.fr       */
+/*   Updated: 2025/03/16 11:07:05 by sbaghdad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char *ft_strchr(char *line, char c)
+char	*ft_strchr(char *line, char c)
 {
 	if (!line)
 		return (NULL);

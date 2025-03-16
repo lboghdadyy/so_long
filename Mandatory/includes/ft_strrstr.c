@@ -1,19 +1,31 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/16 11:05:46 by sbaghdad          #+#    #+#             */
+/*   Updated: 2025/03/16 11:06:51 by sbaghdad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-char *ft_strcmp(char *s1, char *s2)
+char	*ft_strcmp(char *s1, char *s2)
 {
-    int i = 0;
+	int	i;
 
-    while (s1[i] || s2[i]) 
+	i = 0;
+	while (s1[i] || s2[i])
 	{
-        if (s1[i] == s2[i]) 
-            i++;
+		if (s1[i] == s2[i])
+			i++;
 		else
 			return (NULL);
-    }
-    return (s1);
+	}
+	return (s1);
 }
-
 
 char	*ft_strrchr(char *s, int c)
 {
@@ -23,7 +35,7 @@ char	*ft_strrchr(char *s, int c)
 	while (i >= 0)
 	{
 		if (s[i] == (char)c)
-			return ((char*)s + i);
+			return (s + i);
 		i--;
 	}
 	return (NULL);

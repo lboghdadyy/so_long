@@ -11,7 +11,8 @@ SRC=Mandatory/so_long.c Mandatory/includes/ft_strlen.c Mandatory/includes/ft_str
 	Mandatory/game/ft_print_moves.c Mandatory/game/ft_destroy_imgs.c Mandatory/includes/ft_strrstr.c
 HEADER=Mandatory/includes/so_long.h
 B_SRC=$(patsubst Mandatory/%.c, Bonus/%_bonus.c, $(SRC)) Bonus/game/ft_move_enemy.c Bonus/game/ft_you_lose.c Bonus/includes/ft_itoa.c \
-	Bonus/includes/ft_strjoin.c Bonus/game/ft_draw_player.c Bonus/includes/ft_lst_utils_bonus.c
+	Bonus/includes/ft_strjoin.c Bonus/game/ft_draw_player.c Bonus/includes/ft_lst_utils_bonus.c Bonus/game/ft_shine.c Bonus/game/ft_coin_bonus.c \
+	Bonus//game/ft_shortcuts_enemy.c
 B_OBJ=$(B_SRC:.c=.o)
 OBJ=$(SRC:.c=.o)
 MLX_DIR = ../minilibx-linux

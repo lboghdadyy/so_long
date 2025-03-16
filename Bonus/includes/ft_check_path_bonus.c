@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check_path_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sbaghdad < sbaghdad@student.1337.ma>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/16 13:16:13 by sbaghdad          #+#    #+#             */
+/*   Updated: 2025/03/16 13:18:00 by sbaghdad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_bonus.h"
 
 char	**ft_dup_map(char **map)
@@ -8,10 +20,8 @@ char	**ft_dup_map(char **map)
 
 	if (!map)
 		return (NULL);
-	len = 0;
-	while (map[len])
-		len++;
-	new_map = (char **)malloc(sizeof(char *) * (len + 1));
+	len = ft_size_array(map);
+	new_map = malloc(sizeof(char *) * (len + 1));
 	if (!new_map)
 		return (NULL);
 	i = 0;
@@ -19,12 +29,7 @@ char	**ft_dup_map(char **map)
 	{
 		new_map[i] = ft_strdup(map[i]);
 		if (!new_map[i])
-		{
-			while (--i >= 0)
-				free(new_map[i]);
-			free(new_map);
-			return (NULL);
-		}
+			return (ft_free_tab(new_map), NULL);
 		i++;
 	}
 	new_map[len] = NULL;
@@ -39,8 +44,7 @@ void	ft_flood_fill(char **map, int x, int y)
 	{
 		return ;
 	}
-	if (map[y][x] != 'C')
-		map[y][x] = 'F';
+	map[y][x] = 'F';
 	ft_flood_fill(map, x - 1, y);
 	ft_flood_fill(map, x + 1, y);
 	ft_flood_fill(map, x, y - 1);
@@ -53,13 +57,12 @@ void	ft_check_flood_fill(t_point *s, char **map)
 	int	j;
 
 	i = 0;
-	
-	while (map[i])
+	while (s->map[i])
 	{
 		j = 0;
-		while (map[i][j])
+		while (s->map[i][j])
 		{
-			if (((map[i][j] == 'C') || (map[i][j] == 'E')) \
+			if (((s->map[i][j] == 'C') || (s->map[i][j] == 'E')) \
 				&& (map[i - 1][j] != 'F' && map[i + 1][j] != 'F' && \
 				map[i][j - 1] != 'F' && map[i][j + 1] != 'F'))
 				ft_error("Error : Invalid path\n", s);
@@ -69,14 +72,14 @@ void	ft_check_flood_fill(t_point *s, char **map)
 	}
 }
 
-void    ft_check_path(t_point *s)
+void	ft_check_path(t_point *s)
 {
-    char    **dup_map;
+	char	**dup_map;
 
-    dup_map = ft_dup_map(s->map);
-    if (!dup_map)
-        ft_error(NULL, s);
-    ft_flood_fill(dup_map, s->x, s->y);
+	dup_map = ft_dup_map(s->map);
+	if (!dup_map)
+		ft_error(NULL, s);
+	ft_flood_fill(dup_map, s->x, s->y);
 	ft_check_flood_fill(s, dup_map);
 	ft_free_tab(dup_map);
 }
